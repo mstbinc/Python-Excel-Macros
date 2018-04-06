@@ -18,6 +18,8 @@ import json
 import time
 import win32com
 from win32com.client import Dispatch
+from shutil import copyfile
+
 
 path = os.getcwd()
 config = json.load(open('config.json'))
@@ -27,6 +29,7 @@ xl = Dispatch("Excel.Application")
 xl.Visible = True
 wb = xl.Workbooks.Add()
 
+src = config['source-path']
 
 
 sub_template = """' {4}
@@ -39,7 +42,7 @@ vba_module = ''
 
 for macro in config['macros']:
 
-	string_import = config['source-path'].replace('/', '.') + macro
+	string_import = src.replace('/', '.') + macro
 	description = config['macros'][macro]['description']
 	hotkey = config['macros'][macro]['hotkey']
 	entry = config['macros'][macro]['entry']
@@ -65,4 +68,8 @@ wb.SaveAs(path + '/' + config['excel-filename'], FileFormat=52)
 os.remove("output.bas")
 xl.Quit()
 
-os.startfile(os.getenv('APPDATA') + '\Microsoft\Excel\XLSTART')
+appdata = os.getenv('APPDATA') + '\Microsoft\Excel\XLSTART'
+os.startfile(appdata)
+
+copyfile('PERSONAL.xlsm', appdata + '/PERSONAL.xlsm')
+os.remove("PERSONAL.xlsm")
