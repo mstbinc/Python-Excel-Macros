@@ -1,0 +1,12 @@
+{
+	"excel-filename": "PERSONAL.xlsm",
+	"source-path": "src/",
+
+	"macros": {
+		"outlet_generator": {
+			"description": "Generates outlet sheets based on a selection of unit data",
+			"entry": "generate_outlets",
+			"hotkey": "O"
+		}
+	}
+}
