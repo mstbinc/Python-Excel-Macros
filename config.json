@@ -7,6 +7,31 @@
 			"description": "Generates outlet sheets based on a selection of unit data",
 			"entry": "generate_outlets",
 			"hotkey": "O"
+		},
+		"append_diameter": {
+			"description": "Appends the diameter symbol to selected cells",
+			"entry": "diameter",
+			"hotkey": "D"
+		},
+		"clear_formatting": {
+			"description": "Clears conditional formatting of selected cells",
+			"entry": "clear",
+			"hotkey": "C"
+		},
+		"exhaust_setup": {
+			"description": "Sets up exhaust headsheet/inlet sheet",
+			"entry": "generate_exhaust",
+			"hotkey": "E"
+		},
+		"ahu_setup": {
+			"description": "Sets up air handler sheets",
+			"entry": "generate_ahu",
+			"hotkey": "G"
+		},
+		"water_setup": {
+			"description": "Sets up water sheets",
+			"entry": "generate_water",
+			"hotkey": "W"
 		}
 	}
 }

@@ -36,7 +36,9 @@ sub_template = """' {4}
 Sub {3}()
 Attribute {3}.VB_ProcData.VB_Invoke_Func = "{1}\\n14"
     RunPython ("import {2}; {2}.{3}()")
-End Sub"""
+End Sub
+
+"""
 
 vba_module = ''
 

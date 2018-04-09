@@ -45,17 +45,12 @@ def generate_outlets():
     xw.Range("A15").select()
     sheet.api.Paste()
 
-    xw.Range("M30").value = sum_total
-
     xw.Range("A43:I43").api.Copy()
 
     # insert the necessary number of rows for all systems
     while sum_total > (sheet_end_row - sheet_start_row + 1):
         xw.Range("A43:I43").api.Insert(constants.InsertShiftDirection.xlShiftDown)
         sum_total -= 1
-
-    xw.Range("Q20").value = alphabet.get_alphabet()
-
 
     # Draw each piece of equipment
     counts = {}
