@@ -9,11 +9,18 @@ def get_alphabet():
 		alpha = alpha.replace(c, '')
 	return alpha
 
+"""
+TODO:
+There is an error with this:
+	f(48) should return 'AZ', but it retuns 'BZ'
+"""
 def number_to_letter(num):
 	alpha = get_alphabet()
 	base = len(alpha)
 	string = ''
 	while num != 0:
+		if num == base:
+			return index_to_char(base) + string
 		remainder = num % base
 		string = index_to_char(remainder) + string
 		num = num / base
@@ -49,8 +56,8 @@ if __name__ == "__main__":
 	print "length: {}".format(len(alpha))
 	print ''
 
-	testnum = 25
+	testnum = 24
 	print "{} converted to letter: {}".format(testnum, number_to_letter(testnum))
 
-	testletters = 'WEED'
+	testletters = 'z'
 	print "{} converted to number: {}".format(testletters, letter_to_number(testletters))

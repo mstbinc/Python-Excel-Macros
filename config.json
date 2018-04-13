@@ -32,6 +32,21 @@
 			"description": "Sets up water sheets",
 			"entry": "generate_water",
 			"hotkey": "W"
+		},
+		"link_fix": {
+			"description": "Fixes broken links when importing sheets from external workbooks",
+			"entry": "fix_broken_links",
+			"hotkey": "L"
+		},
+		"select_box_totals": {
+			"description": "selects the total of VAV boxes to use on box sheets",
+			"entry": "select_totals",
+			"hotkey": "T"
+		},
+		"copy_system": {
+			"description": "Creates a copy of the selected head sheet",
+			"entry": "copy_system",
+			"hotkey": "N"
 		}
 	}
 }
